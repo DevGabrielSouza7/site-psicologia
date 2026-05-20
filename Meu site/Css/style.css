@@ -1,0 +1,298 @@
+/* ==========================================
+   1. RESET BÁSICO E CONFIGURAÇÕES GERAIS
+============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif; /* Fonte elegante igual ao design */
+    line-height: 1.6;
+}
+
+:root {
+    --verde-oliva: #728c54;   /* Cor dos destaques e botões */
+    --creme: #f4f5f1;         /* Fundo principal do site */
+    --verde-claro: #e8ede3;   /* Fundo das seções alternadas */
+    --texto-escuro: #1a2312;  /* Cor do texto para leitura confortável */
+}
+
+body {
+    background-color: var(--creme);
+    color: var(--texto-escuro);
+    overflow-x: hidden; /* Evita barras de rolagem horizontais irritantes */
+}
+
+/* Containers de conteúdo */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.container-full {
+    width: 100%;
+}
+
+.verde-claro {
+    background-color: var(--verde-claro);
+}
+
+/* Alinhamento base para computadores */
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+/* ==========================================
+   2. TEXTOS E BOTÕES (PADRÃO DO SITE)
+============================================ */
+h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.titulo-destaque {
+    font-size: 3rem;
+}
+
+.destaque {
+    color: var(--verde-oliva);
+}
+
+p {
+    font-size: 1.15rem;
+    margin-bottom: 25px;
+}
+
+/* Botão "Entre em contato" idêntico ao modelo */
+.btn-contato {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #ffffff;
+    color: var(--texto-escuro);
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    border: 2px solid var(--verde-oliva);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.btn-contato:hover {
+    background-color: var(--verde-oliva);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   3. ESTILIZAÇÃO POR SEÇÃO (VISUAL DO PC)
+============================================ */
+
+/* Seção 1: Banner Principal (CORRIGIDO PARA LADO A LADO) */
+.banner {
+    display: flex;
+    flex-direction: row;       /* Garante que fiquem lado a lado no PC */
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    gap: 40px;
+}
+
+.foto-perfil {
+    width: 45%;               /* Ocupa o lado esquerdo */
+    max-width: 900px;
+    height: auto;
+    display: block;
+    border-radius: 120px 30px 120px 30px; /* Mantém a sua borda do modelo */
+    object-fit: cover;
+}
+
+.logo-area {
+    width: 60%;               /* Ocupa o lado direito */
+    display: flex;
+    flex-direction: column;   /* Alinha o logo e o botão verticalmente */
+    align-items: center;      /* Centraliza eles na área da direita */
+    justify-content: center;
+    gap: 30px;
+}
+
+.logo-principal {
+    width: 70%;
+    max-width: 650px;         /* Ajusta o tamanho ideal do seu logo */
+    height: auto;
+    display: block;
+}
+
+/* Seção 2: Sobre Mim */
+.texto-sobre, .imagem-sobre {
+    width: 50%;
+}
+
+.texto-sobre ul {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.texto-sobre ul li {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.texto-sobre ul li i {
+    color: var(--verde-oliva);
+    margin-right: 12px;
+    margin-top: 6px;
+}
+
+.imagem-sobre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.moldura-livro {
+    max-width: 80%;
+}
+
+.foto-livro {
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* Seção 3: Psicoterapia Online */
+.notebook-area, .texto-psicoterapia {
+    width: 50%;
+}
+
+.foto-notebook {
+    width: 100%;
+    border-radius: 30px 120px 30px 120px; /* Borda invertida charmosa */
+}
+
+/* Seção 4: Público Atendido */
+.flex-publico {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    font-size: 2rem;
+    margin: 40px 0;
+}
+
+/* Links sublinhados do modelo */
+.flex-publico p {
+    font-weight: normal;
+    border-bottom: 2px solid var(--verde-oliva);
+    padding-bottom: 5px;
+}
+
+/* Faixa verde de objetivo/missão */
+.missao {
+    background-color: #8fa874; /* Verde do pincel do fundo */
+    color: white;
+    padding: 35px 50px;
+    border-radius: 60px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.missao p {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+}
+
+/* Seção 5: Rodapé / Contato */
+.info-contato, .cartao-area {
+    width: 50%;
+}
+
+.info-contato h3 {
+    font-weight: normal;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.info-contato p {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.foto-cartao {
+    width: 100%;
+    border-radius: 30px 120px 30px 120px;
+}
+
+
+/* ==========================================
+   4. A MÁGICA DO CELULAR (RESPONSIVIDADE)
+============================================ */
+@media (max-width: 768px) {
+    .flex {
+        flex-direction: column; /* Transforma linhas em colunas (empilha) */
+        text-align: center;
+        gap: 35px;
+    }
+
+    /* Ajuste específico para o Banner empilhar certinho no celular */
+    .banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
+        padding-top: 40px;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    .titulo-destaque {
+        font-size: 2.4rem;
+    }
+
+    /* Ajustes das larguras no celular */
+    .foto-perfil, .logo-area, .texto-sobre, .imagem-sobre, 
+    .notebook-area, .texto-psicoterapia, .info-contato, .cartao-area {
+        width: 100%;
+    }
+
+    .foto-perfil {
+        max-width: 65%; /* Não deixa a foto gigante no celular */
+        margin: 0 auto;
+    }
+
+    .logo-principal {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .texto-sobre ul li {
+        text-align: left; /* Mantém a lista alinhada à esquerda para leitura */
+    }
+
+    .flex-publico {
+        flex-direction: column; /* Empilha Adolescente, Adulto, Idoso */
+        gap: 20px;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    .missao {
+        padding: 25px;
+        border-radius: 30px;
+    }
+
+    .missao p {
+        font-size: 1.1rem;
+    }
+}
