@@ -91,7 +91,7 @@ p {
 }
 
 /* ==========================================
-   3. ESTILIZAÇÃO POR SEÇÃO (VISUAL DO PC)
+   3. ESTILIZAÇÃO POR SEÇÃO (VISUAL DO PC RESTAURADO)
 ============================================ */
 
 /* Seção 1: Banner Principal */
@@ -101,36 +101,52 @@ p {
     justify-content: space-between;
     align-items: center;
     padding-top: 60px;
-    padding-bottom: 40px;
+    padding-bottom: 120px;     /* Aumentado o espaço no fundo para o botão caber certinho */
     gap: 40px;
+    position: relative;        /* ESSENCIAL: Segura o botão centralizado dentro desta seção */
 }
 
+/* Foto na Esquerda - Ajustado para 48% para proporção ideal */
 .foto-perfil {
-    width: 45%;               /* Ocupa o lado esquerdo */
+    width: 48%;               
     max-width: 900px;
     height: auto;
     display: block;
-    border-radius: 120px 30px 120px 30px; /* Mantém a sua borda do modelo */
+    border-radius: 120px 30px 120px 30px; 
     object-fit: cover;
 }
 
+/* Logo e Botão na Direita */
 .logo-area {
-    width: 60%;               /* Ocupa o lado direito */
+    width: 50%;               
     display: flex;
-    flex-direction: column;   /* Alinha o logo e o botão verticalmente */
-    align-items: center;      /* Centraliza eles na área da direita */
-    justify-content: center;
-    gap: 30px;
+    flex-direction: column;   
+    align-items: center;      
+    justify-content: center;  
+    gap: 30px;                
 }
 
+/* Logo com Super Zoom */
 .logo-principal {
-    width: 70%;
-    max-width: 650px;         /* Ajusta o tamanho ideal do seu logo */
+    width: 100%;
+    max-width: 800px;         
     height: auto;
     display: block;
+    transform: scale(1.35);    /* Dá um zoom de 35% no logo para ele ficar gigante, sem quebrar o site */
 }
 
-/* Seção 2: Sobre Me */
+/* Tira o botão da direita e centraliza no meio da tela */
+.banner .btn-contato {
+    position: absolute;
+    bottom: 30px;             /* Fica a 30px do final da seção */
+    left: 0;
+    right: 0;
+    margin: 0 auto;           /* Centraliza o botão perfeitamente */
+    width: fit-content;       /* Garante que o alinhamento não estique o botão */
+    z-index: 10;
+}
+
+/* Seção 2: Sobre Mim */
 .texto-sobre, .imagem-sobre {
     width: 50%;
 }
@@ -176,7 +192,7 @@ p {
 
 .foto-notebook {
     width: 100%;
-    border-radius: 30px 120px 30px 120px; /* Borda invertida charmosa */
+    border-radius: 30px 120px 30px 120px; 
 }
 
 /* Seção 4: Público Atendido */
@@ -188,7 +204,6 @@ p {
     margin: 40px 0;
 }
 
-/* Links sublinhados do modelo */
 .flex-publico p {
     font-weight: normal;
     border-bottom: 2px solid var(--verde-oliva);
@@ -197,7 +212,7 @@ p {
 
 /* Faixa verde de objetivo/missão */
 .missao {
-    background-color: #8fa874; /* Verde do pincel do fundo */
+    background-color: #8fa874; 
     color: white;
     padding: 35px 50px;
     border-radius: 60px;
@@ -238,17 +253,17 @@ p {
 ============================================ */
 @media (max-width: 768px) {
     .flex {
-        flex-direction: column; /* Transforma linhas em colunas (empilha) */
+        flex-direction: column; 
         text-align: center;
         gap: 35px;
     }
 
-    /* Ajuste específico para o Banner empilhar certinho no celular */
     .banner {
         flex-direction: column;
         text-align: center;
         gap: 35px;
         padding-top: 40px;
+        padding-bottom: 40px; /* Volta o espaçamento ao normal no mobile */
     }
 
     h2 {
@@ -266,21 +281,31 @@ p {
     }
 
     .foto-perfil {
-        max-width: 65%; /* Não deixa a foto gigante no celular */
+        max-width: 65%; 
         margin: 0 auto;
     }
 
     .logo-principal {
         max-width: 90%;
         margin: 0 auto;
+        transform: scale(1.1); /* Diminui aquele super zoom para não cortar na tela pequena */
+    }
+
+    /* Cancela a flutuação do botão no celular, colocando ele na ordem normal debaixo do logo */
+    .banner .btn-contato {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        margin: 0 auto;
     }
 
     .texto-sobre ul li {
-        text-align: left; /* Mantém a lista alinhada à esquerda para leitura */
+        text-align: left; 
     }
 
     .flex-publico {
-        flex-direction: column; /* Empilha Adolescente, Adulto, Idoso */
+        flex-direction: column; 
         gap: 20px;
         align-items: center;
         margin: 20px 0;
@@ -295,17 +320,18 @@ p {
         font-size: 1.1rem;
     }
 }
+
 /* ==========================================
    5. ADICIONAIS: BOTÕES FLUTUANTES (INSTA E WHATS)
 ============================================ */
 .redes-flutuantes {
     position: fixed;
-    bottom: 20px;       /* Distância do fundo da tela */
-    right: 20px;        /* Distância do canto direito */
+    bottom: 20px;       
+    right: 20px;        
     display: flex;
-    flex-direction: column; /* Empilha os botões verticalmente */
-    gap: 12px;          /* Espaço entre um botão e outro */
-    z-index: 1000;      /* Mantém acima de tudo no site */
+    flex-direction: column; 
+    gap: 12px;          
+    z-index: 1000;      
 }
 
 .btn-flutuante {
@@ -322,43 +348,44 @@ p {
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Cor do WhatsApp */
 .btn-flutuante.whatsapp {
     background-color: #25d366;
 }
 
-/* Gradiente oficial do Instagram */
 .btn-flutuante.instagram {
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
 }
 
-/* Efeito de zoom ao passar o mouse em qualquer um deles */
 .btn-flutuante:hover {
     transform: scale(1.1);
-    filter: brightness(0.9); /* Dá uma leve escurecida charmosa no hover */
+    filter: brightness(0.9); 
 }
+
 /* ==========================================
    6. ANIMAÇÕES EXCLUSIVAS DO SITE
 ============================================ */
-
-/* Regra que cria o movimento suave de surgir e subir */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px); /* Começa 30px abaixo */
+        translate: 0 30px; /* Faz a foto subir sem bloquear o hover */
     }
     to {
         opacity: 1;
-        transform: translateY(0);    /* Termina na posição original */
+        translate: 0 0;    /* Libera o transform para o zoom funcionar perfeitamente! */
     }
 }
 
-/* Classe que você vai colocar nos elementos do HTML */
-.animar-suave {
-    animation: fadeInUp 1.2s ease-out forwards;
+/* ==========================================
+   7. EFEITO DE ZOOM E PROFUNDIDADE (HOVER 3D)
+============================================ */
+
+/* 1. Prepara as imagens para uma transição suave */
+.foto-perfil, .foto-livro, .foto-notebook, .foto-cartao {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Opcional: Um pequeno atraso para o botão surgir depois do texto */
-.atraso-1 {
-    animation-delay: 0.3s;
+/* 2. Aplica o Zoom (aproxima) e a Sombra quando o mouse passa por cima */
+.foto-perfil:hover, .foto-livro:hover, .foto-notebook:hover, .foto-cartao:hover {
+    transform: scale(1.03); /* O scale faz a foto APROXIMAR (dar zoom) de leve */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Cria a sombra de profundidade 3D */
 }
